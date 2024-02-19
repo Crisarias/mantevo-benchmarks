@@ -2,7 +2,7 @@
 
 from optparse import OptionParser
 import os
-import popen2
+import subprocess
 import sys
 
 # Simple wrapper for when failure discovered
@@ -58,7 +58,7 @@ if len(before) != len(after):
 
 # Loop over the lines that changed between the two files
 differences = ''
-for i in xrange(len(before)):
+for i in range(len(before)):
   before_fields = before[i].split()
   after_fields  = after[i].split()
   if len(before_fields) != len(after_fields):
@@ -66,7 +66,7 @@ for i in xrange(len(before)):
          '   %s   %s' % (before[i], after[i]))
 
   # Loop over the fields present in the given line
-  for j in xrange(len(before_fields)):
+  for j in range(len(before_fields)):
     before_val = before_fields[j]
     after_val  = after_fields[j]
 
