@@ -1,0 +1,12 @@
+/make/src/CMakeFiles/**
+/make/CMakeFiles/**
+/make/src/**
+/make/*.a
+/make/CMakeCache.txt
+/make/cmake_install.cmake
+/make/Makefile
+/make/output
+/kokkos/core/src/KokkosCore_config.h
+.project
+.cproject
+

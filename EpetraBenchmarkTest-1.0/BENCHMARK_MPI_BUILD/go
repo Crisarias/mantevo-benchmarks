@@ -1,0 +1,10 @@
+mpirun -np 1 ./EpetraBenchmarkTest.exe 700 700 1 1 -m -h
+mpirun -np 2 ./EpetraBenchmarkTest.exe 700 700 2 1 -m
+mpirun -np 4 ./EpetraBenchmarkTest.exe 700 700 2 2 -m
+mpirun -np 8 ./EpetraBenchmarkTest.exe 700 700 4 2 -m
+#mpirun -np 12 ./EpetraBenchmarkTest.exe 700 700 4 3 -m
+#mpirun -np 16 ./EpetraBenchmarkTest.exe 700 700 4 4 -m
+#mpirun -np 20 ./EpetraBenchmarkTest.exe 700 700 5 4 -m
+#mpirun -np 24 ./EpetraBenchmarkTest.exe 700 700 6 4 -m
+#mpirun -np 28 ./EpetraBenchmarkTest.exe 700 700 7 4 -m
+

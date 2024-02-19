@@ -1,0 +1,11 @@
+TRILINOS_PATH=/Users/maherou/Trilinos
+cmake \
+-G"Eclipse CDT4 - Unix Makefiles" \
+-D TPL_ENABLE_MPI:BOOL=ON \
+-D CMAKE_CXX_COMPILER:FILEPATH=/usr/local/openmpi-gcc-4.8/bin/mpicxx \
+-D CMAKE_C_COMPILER:FILEPATH=/usr/local/openmpi-gcc-4.8/bin/mpicc \
+-D CMAKE_Fortran_COMPILER:FILEPATH=/usr/local/openmpi-gcc-4.8/bin/mpif77 \
+-D CMAKE_BUILD_TYPE:STRING=RELEASE \
+-D CMAKE_INSTALL_PREFIX:PATH=$PWD \
+-D Trilinos_ENABLE_Epetra:BOOL=ON \
+$TRILINOS_PATH

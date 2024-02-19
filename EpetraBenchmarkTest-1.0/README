@@ -1,0 +1,43 @@
+
+SUMMARY
+
+This test driver builds a sparse matrix with 25 non-zeros per row (on average) with the specified local grid dimensions.
+It then tests the performance of:
+- sparse matrix-vector multiplication, 
+- sparse matrix-multivector multiplication for 2, 4, 8 RHS,
+- vector 2-norm (for a vector of the same global dimension as the sparse matrix)
+- vector dot product
+- vector axpy (y = alpha*x + y)
+
+Run the command without any arguments to see the usage of the executable.
+
+HOW TO BUILD
+
+1) Download Trilinos from http://trilinos.sandia.gov
+
+2) Install Trilinos as follows:
+
+- Untar the Trilinos source code.  Put it within the EpetraBenchmarkTest directory, or put it somewhere 
+  more central if you are going to use Trilinos for other purposes.
+- The EpetraBenchmarkTest mini-driver can build with one of three instance of Trilinos: Serial, OpenMP and MPI.
+- These instructions are for the MPI build.  The OpenMP and Serial builds are nearly identical.
+- "cd" to the directory EPETRA_MPI_BUILD within the EpetraBenchmarkTest directory.
+- Edit the do-configure file in this directory and define TRILINOS_PATH to point to your copy of Trilinos.
+- You will also need to redefine the paths for the MPI compilers, and perhaps make other modification.
+  The Trilinos website has extensive help for getting Trilinos built.  The trilinos-users@software.sandia.gov
+  mail list is also very helpful.
+- Once your do-configure script is sane, you can execute it by typing "source do-configure", which will build
+  the Epetra package needed for this mini-driver.
+  NOTE:  You will need a valid installation of BLAS and LAPACK.  See the Trilinos installation guide for details
+         (at the Trilinos website).
+- Once you successfully configure Trilinos, type "make; make install"
+
+
+3) Once Trilinos is built, "cd" to the directory BENCHMARK_MPI_BUILD within the EpetraBenchmarkTest directory.
+
+4) Type "make" in this directory.  This should build an executable called EpetraBenchmarkTest.exe.
+
+5) Run the executable.  The file "go" in this directory gives an example of how to run the executable
+   to get timing information.
+
+Questions?  Contact Mike Heroux (maherou@sandia.gov, 320-845-7695).

@@ -1,0 +1,10 @@
+TRILINOS_PATH=/Users/maherou/Trilinos
+cmake \
+-G"Eclipse CDT4 - Unix Makefiles" \
+-D CMAKE_CXX_COMPILER:FILEPATH=/usr/local/bin/g++ \
+-D CMAKE_C_COMPILER:FILEPATH=/usr/local/bin/gcc \
+-D CMAKE_Fortran_COMPILER:FILEPATH=/usr/local/bin/gfortran \
+-D CMAKE_BUILD_TYPE:STRING=RELEASE \
+-D CMAKE_INSTALL_PREFIX:PATH=$PWD \
+-D Trilinos_ENABLE_Epetra:BOOL=ON \
+$TRILINOS_PATH

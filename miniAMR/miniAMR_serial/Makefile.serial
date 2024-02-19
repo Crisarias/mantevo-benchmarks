@@ -1,0 +1,48 @@
+CC   = cc
+LD   = cc
+CPPFLAGS = -I.
+CFLAGS = -O3
+LDFLAGS =
+LDLIBS = -lm
+
+EXEC = miniAMR.x
+
+OBJS = block.o check_sum.o comm.o driver.o init.o main.o move.o plot.o \
+       profile.o refine.o stencil.o target.o util.o
+
+$(EXEC): $(OBJS)
+	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+
+.c.o:
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
+
+clean:
+	rm *.o miniAMR.x
+
+# need dependencies
+
+block.o: block.h proto.h timer.h
+
+check_sum.o: block.h proto.h
+
+comm.o: block.h proto.h timer.h
+
+driver.o: block.h proto.h timer.h
+
+init.o: block.h proto.h
+
+main.o: block.h proto.h param.h
+
+move.o: block.h proto.h
+
+plot.o: block.h proto.h
+
+profile.o: block.h proto.h timer.h
+
+refine.o: block.h proto.h timer.h
+
+stencil.o: block.h proto.h
+
+target.o: block.h proto.h timer.h
+
+util.o: block.h proto.h
