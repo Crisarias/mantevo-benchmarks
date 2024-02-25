@@ -6,7 +6,7 @@ FC=mpif90
 # for MPI only, double precision
 #FFLAGS=-O3 -c -g -DD_PRECISION -check bounds -traceback
 # for MPI + OpenMP, double precision
-FFLAGS=-O3 -c -g -DD_PRECISION -check bounds -traceback -openmp \
+FFLAGS=-O3 -c -g -DD_PRECISION -fcheck bounds -traceback -openmp \
       -I/opt/.openmpi/include
 
 # for linux machines
