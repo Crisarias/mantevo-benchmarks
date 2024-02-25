@@ -7,7 +7,7 @@ FC=mpif90
 #FFLAGS=-O3 -c -g -DD_PRECISION -check bounds -traceback
 # for MPI + OpenMP, double precision
 FFLAGS=-O3 -c -g -DD_PRECISION -check bounds -traceback -openmp \
-      -I/opt/intel-12.1/compiler/include
+      -I/opt/.openmpi/include
 
 # for linux machines
 #CPP=/lib/cpp
@@ -21,7 +21,7 @@ CPP=/usr/bin/cpp
 #CPPFLAGS=-P -traditional -DD_PRECISION
 # ... for MPI + OpenMP, double precision
 CPPFLAGS=-P -traditional -DD_PRECISION -D_OPENMP \
-      -I/opt/intel-12.1/compiler/include
+      -I/opt/.openmpi/include
 
 # linker
 LD=mpif90
@@ -30,18 +30,18 @@ LD=mpif90
 #LDFLAGS=-O3
 # for MPI + OpenMP
 LDFLAGS=-O3 -openmp \
-      -I/opt/intel-12.1/compiler/include
+      -I/opt/.openmpi/include
 
 INCDIR=./include
 
 # for linux machines
-#MPIDIR=-I/home/projects/openmpi/1.7.3/gnu/4.7.2/include
+MPIDIR=-I/opt/.openmpi/include
 # for Mac OSX
 #MPIDIR=-I/Users/dwbarne/local/packages/OpenMPI-1.7.2/include
 # for redsky
 #MPIDIR=-I/apps/x86_64/mpi/openmpi/intel-12.1-2011.13.367/openmpi-1.4.3_oobpr/include
 # for glory, chama
-MPIDIR=-I/apps/x86_64/mpi/openmpi/intel-12.1-2011.13.367/openmpi-1.4.3/include
+# MPIDIR=-I/apps/x86_64/mpi/openmpi/intel-12.1-2011.13.367/openmpi-1.4.3/include
 
 # delete all previous suffixes
 .SUFFIXES:
