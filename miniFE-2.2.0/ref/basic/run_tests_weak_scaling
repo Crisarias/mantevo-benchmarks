@@ -1,0 +1,58 @@
+#!/bin/bash
+
+echo " "
+echo "running miniFE tests..."
+
+if [ ! -x miniFE.x ]; then
+echo "miniFE.x doesn't exist or isn't executable. Aborting."
+exit -1
+fi
+
+./run_one_test 15 1 1 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 30 2 1 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 45 2 2 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 60 4 2 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 75 4 4 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 90 8 4 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 105 8 8 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
+./run_one_test 120 16 8 2
+if [ $? != 0 ]; then
+echo "test failed"
+exit $?
+fi
+
